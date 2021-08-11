@@ -1,14 +1,16 @@
-# Setting up an HA Rancher/RKE2 cluster using rancherD**
+# Setting up an HA Rancher/RKE2 cluster using rancherD
 
 additional config for rancherD https://rancher.com/docs/rancher/v2.x/en/installation/install-rancher-on-linux/rancherd-configuration/
 
 *Note: need fixed registration address aka external load balancer for HA*
 
-Note: for a single node setup you don't need the load balancer or the pre-configured .yaml file with token and tls-san options. Can skip down to run the installer
+**Note: for a single node setup you don't need the load balancer or the pre-configured .yaml file with token and tls-san options. Can skip down to run the installer**
 
 **Config is below for a sample nginx.conf which can be run in docker or another vm not part of the new cluster**
 
-## starting up the first node:
+---
+
+### Starting up the first node:
 
 Create the path and RancherD config file at /etc/rancher/rke2/config.yaml
 
@@ -64,7 +66,7 @@ now you can run the kubectl commands. To check the status of the deployments use
     rancherd reset-admin
 
 
-## subsequent nodes
+### Subsequent nodes
 
 Create the path and RancherD config file at /etc/rancher/rke2/config.yaml
 
@@ -82,8 +84,8 @@ Input this into the config and change the values below to match the first node's
 
 *Return back to above for the steps to get the 2nd and 3rd node up and running*
 
-
-## Nginx LoadBalancer config for HA
+---
+### Nginx LoadBalancer config for HA
 
     load_module /usr/lib/nginx/modules/ngx_stream_module.so;
     events {}
