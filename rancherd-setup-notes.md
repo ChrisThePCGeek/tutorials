@@ -257,7 +257,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`traefik.cbnet.lan`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+    - match: Host(`traefik.example.com`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
       kind: Rule
       services:
         - name: api@internal
