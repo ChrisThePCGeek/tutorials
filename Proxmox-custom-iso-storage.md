@@ -18,7 +18,7 @@
 
 * We must format the new partition by creating the file system on it
 
-    `mke2fs.ext4 /dev/sdaX`
+    `mkfs.ext4 /dev/sdaX`
 
 > *Where "X" is the number of your newly created partition.If you arent sure what it is you can run `lsblk` to list all the partitions*
 
